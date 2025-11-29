@@ -4,7 +4,7 @@ import joblib
 
 # Load the trained model
 filename = r'logistic_regression_model.joblib.joblib'
-loaded_model = joblib.load(open(filename, 'rb'))
+loaded_model = joblib.load(open(r'logistic_regression_model.joblib.joblib', 'rb'))
 
 # Define the correct column names
 columns = ['Pregnacies', 'Glucose', 'BloodPressure',
@@ -38,7 +38,7 @@ input_data = pd.DataFrame([[Pregnancies,Glucose,BloodPressure,Insulin,BMI,Diabet
 # Make a prediction
 # Make a prediction
 if st.button("Diabetes Prediction"):
-    prediction = predict_Diabetes_prediction(input_data)
+    prediction = predict_Diabetes_Prediction(input_data)
     if prediction[0] == 0:
         st.write("Predicted Diabetes: 0 (No significant delay expected)")
     else:
